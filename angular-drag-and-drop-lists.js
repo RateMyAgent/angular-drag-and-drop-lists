@@ -493,7 +493,7 @@
       function getDropEffect(event, ignoreDataTransfer) {
         var effects = ALL_EFFECTS;
         if (!ignoreDataTransfer) {
-          effects = filterEffects(effects, event.dataTransfer.effectAllowed);
+          effects = filterEffects(effects, event.dataTransfer.effectAllowed || dndState.effectAllowed);
         }
         if (dndState.isDragging) {
           effects = filterEffects(effects, dndState.effectAllowed);
